@@ -141,7 +141,7 @@ end
 
 get '/admin/brdcast/unactive/:id' do
 	DB[:brodcasts].where(:id => params[:id]).update(:active => "لا")
-	redirect '/admin/brdcast/setting'
+	redirect '/admin'
 end
 
 get '/admin/brdcast/del/:id' do
