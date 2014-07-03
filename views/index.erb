@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>برودكاست</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="UTF-8">
+		<link rel="icon" type="img/png"href="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-14-128.png">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<div id="title">
+					<div id="page-name">
+						<a href =""><h1 id="tit">الرئيسية</h1></a>
+					</div>
+					<div id="navview">
+					</div>
+					<a href="/add" title="اضافة برودكاست"><div id="addbrd">
+					</div></a>
+				</div>
+			</div>
+			<div id="navbar">
+				<ul id="nav">
+					<a href="/"><li class="nav" id="current-page"><label>الرئيسية</label></li></a>
+					<a href="/about"><li class="nav"><label>عن الموقع</label></li></a>
+					<a href="callus"><li class="nav"><label>اتصل بنا</label></li></a>
+				</ul>
+			</div>
+			<div id="main">
+				<div id="cats">
+					<a class="cat-link" href="/allbrd"><div class="cat">
+						 	<h2 class="cat-title">الكل</h2>
+							<p class="cat-desc">عرض جميع البروكاستات الموجودة في الموقع</p>
+					</div></a>
+					<a class="cat-link" href="/news"><div class="cat">
+						<h2 class="cat-title">اخر الاخبار</h2>
+						<p class="cat-desc">اخر الاخبار - الاحداث العالمية والمحلية</p>
+					</div></a>
+					<a class="cat-link" href="/islamic"><div class="cat">
+						<h2 class="cat-title">برودكاست اسلامي</h2>
+						<p class="cat-desc">برودكاست اسلامي وديني</p>
+					</div></a>
+					<a class="cat-link" href="/ashaar"><div class="cat">
+						<h2 class="cat-title">برودكاست اشعار</h2>
+						<p class="cat-desc">اشعار شوق - اشعار حزن</p>
+					</div></a>
+					<a class="cat-link" href="/joke"><div class="cat">
+						<h2 class="cat-title">برودكاست نكت</h2>
+						<p class="cat-desc">ضحك - مقالب والمزيد</p>
+					</div></a>
+					<a class="cat-link" href="/hizen"><div class="cat">
+						<h2 class="cat-title">برودكاست حزن</h2>
+						<p class="cat-desc">الم - حزن - فراق</p>
+					</div></a>
+					<a class="cat-link" href="/night&morning"><div class="cat">
+						<h2 class="cat-title">برودكاست صباح ومساء</h2>
+						<p class="cat-desc">اذكار صباح ومساء - تصبيح - تمسية</p>
+					</div></a>
+					<a class="cat-link" href="/munasbat"><div class="cat">
+						<h2 class="cat-title">برودكاست المناسبات</h2>
+						<p class="cat-desc">برودكاست المناسبات</p>
+					</div></a>
+					<a class="cat-link" href="/other"><div class="cat">
+						<h2 class="cat-title">برودكاست منوع</h2>
+						<p class="cat-desc">البرودكتات اللتي ليس لها قسم</p>
+					</div></a>
+			</div>
+			<footer>
+				<a href=""><h3>تصميم وبرمجة البوسطة</h3></a>
+			</footer>
+		</div>
+	</body>
+	<script> 
+	$(document).ready(function(){
+	  $("#navview").click(function(){
+	    $("#navbar").slideToggle("slow");
+	  });
+	});
+	</script>
+</html>

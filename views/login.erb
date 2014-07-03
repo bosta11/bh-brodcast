@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>برودكاست - لوحة التحكم</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="UTF-8">
+		<link rel="icon" type="img/png"href="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-14-128.png">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		<div id="loginwrapper">
+			<div id="header">
+				<div id="title">
+					<div id="page-name">
+						<a href =""><h1 id="tit">تسجيل الدخول</h1></a>
+					</div>
+			</div>
+			<div id="main">
+				<div id="login">
+					<% if @error %>	
+						<div id="error"></div>
+					<% end %>
+					<form method ="post" action = "login">
+						<input type="text" id="login-input" placeholder="الاسم" name="username">
+						<br/>
+						<input type="password" id="login-pass" placeholder="الباسوورد" name="password">
+						<br/>
+						<input type="submit" value="دخول" id="login-submit">
+					</form>
+				</div>
+			</div>
+			<footer>
+				<a href=""><h3>تصميم وبرمجة البوسطة</h3></a>
+			</footer>
+		</div>
+	</body>
+	<script> 
+	$(document).ready(function(){
+	  $("#navview").click(function(){
+	    $("#navbar").slideToggle("slow");
+	  });
+	});
+	</script>
+</html>

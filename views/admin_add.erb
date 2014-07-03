@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>برودكاست - لوحة التحكم</title>
+		<link rel="stylesheet" type="text/css" href="<%= url ('style.css') %>">
+		<meta charset="UTF-8">
+		<link rel="icon" type="img/png"href="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-14-128.png">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<div id="title">
+					<div id="page-name">
+						<a href =""><h1 id="tit">اضافة برودكاست</h1></a>
+					</div>
+					<div id="navview">
+					</div>
+					<a href="/admin/brdcast/setting" title="اعدادات البرودكاست"><div id="setting">
+					</div></a>
+			</div>
+			<div id="navbar">
+				<ul id="nav">
+					<a href="/"><li class="nav"><label>زيارة الموقع</label></li></a>
+					<a href="/admin"><li class="nav"><label>الرئيسية</label></li></a>
+					<a href="/admin/brdcast/add"><li class="nav" id="current-page"><label>اضافة برودكاست</label></li></a>
+					<li class="nav" id="main-nav"><label>اعدادات البرودكاست</label></li>
+					<a href="/admin/brdcast/setting"><li class="nav"><label>البرودكستات المفعلة</label></li></a>
+					<a href="/admin/brdcast/setting/activation"><li class="nav"><label>تفعيل البرودكاستات</label></li></a>
+					<a href="/admin/messages"><li class="nav"><label>رسائل الزوار</label></li></a>
+					<a href="/logout"><li class="nav"><label>تسجيل الخروج</label></li></a>
+				</ul>
+			</div>
+			<div id="admin-main">
+				<div id="add">
+					<form action="" method="post">
+						<input type="text" id="add-username" name="name" placeholder="الاسم (اجباري)" value="الادارة">
+						<br/>
+						<input type="text" id="add-userphone" name="phone" placeholder="الهاتف (غير اجباري)" value="الادارة">
+						<br/>
+						<select id="add-cat-select" name="cate">
+							<option value="" disabled selected style="display:none;">اختار قسم البرودكاست</option>
+							<option value="اخبار">اخر الاخبار</option>
+							<option value="اسلاميات">اسلاميات</option>
+							<option value="اشعار">اشعار</option>
+							<option value="نكت">نكت</option>
+							<option value="حزن">حزن</option>
+							<option value="صباح ومساء">برودكاست صباح ومساء</option>
+							<option value="مناسبات">مناسبات</option>
+							<option value="منوع">منوع</option>
+						</select>
+						<br/>
+						<select id="add-cat-select" name="active">
+							<option value="نعم">نعم</option>
+							<option value="لا">لا</option>
+						</select>
+						<br/>
+						<textarea id="add-mes" name="mes" placeholder="البروكاست"></textarea>
+						<br/>
+						<input id="send" type="submit" value="اضافة">
+					</form>
+				</div>
+			</div>
+			<footer>
+				<a href=""><h3>تصميم وبرمجة البوسطة</h3></a>
+			</footer>
+		</div>
+	</body>
+	<script> 
+	$(document).ready(function(){
+	  $("#navview").click(function(){
+	    $("#navbar").slideToggle("slow");
+	  });
+	});
+	</script>
+</html>

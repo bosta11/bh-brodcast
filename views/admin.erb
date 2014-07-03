@@ -1,0 +1,128 @@
+<html>
+	<head>
+		<title>برودكاست - لوحة التحكم</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="UTF-8">
+		<link rel="icon" type="img/png"href="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-14-128.png">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<div id="title">
+					<div id="page-name">
+						<a href =""><h1 id="tit">الرئيسية</h1></a>
+					</div>
+					<div id="navview">
+					</div>
+					<a href="/admin/brdcast/setting" title="اعدادات البرودكاست"><div id="setting">
+					</div></a>
+			</div>
+			<div id="navbar">
+				<ul id="nav">
+					<a href="/"><li class="nav"><label>زيارة الموقع</label></li></a>
+					<a href="/admin"><li class="nav" id="current-page"><label>الرئيسية</label></li></a>
+					<a href="/admin/brdcast/add"><li class="nav"><label>اضافة برودكاست</label></li></a>
+					<li class="nav" id="main-nav"><label>اعدادات البرودكاست</label></li>
+					<a href="/admin/brdcast/setting"><li class="nav"><label>البرودكستات المفعلة</label></li></a>
+					<a href="/admin/brdcast/setting/activation"><li class="nav"><label>تفعيل البرودكاستات</label></li></a>
+					<a href="/admin/messages"><li class="nav"><label>رسائل الزوار</label></li></a>
+					<a href="/logout"><li class="nav"><label>تسجيل الخروج</label></li></a>
+				</ul>
+			</div>
+			<div id="admin-main">
+				<div id="last-brd">
+					<h2 id="last-brd-title">اخر البرودكستات الغير مفعلة</h2>
+					<table border=1px style="width:100%;" id="last-brd-table">
+						<tr>
+							<thead>
+							<th class="last-brd-brd">البرودكاست</th>
+							<th>القسم</th>
+							<th>اسم المضيف</th>
+							<th>رقم الهاتف</th>
+							<th class="table-act-post">تفعيل</th>
+							<th class="table-edit-post">تعديل</th>
+							<th class="table-del-post">حذف</th>
+						</tr>
+						<% @last_brd_no_act.each do |lbnoac| %>
+						<tr>
+							<td class="last-brd-brd"><%= lbnoac[:details] %></td>
+							<td><%= lbnoac[:category] %></td>
+							<td><%= lbnoac[:user_name] %></td>
+							<td><%= lbnoac[:user_phone] %></td>
+							<td class="table-edit-act"><a href="/admin/brdcast/active/<%= lbnoac[:id] %>"><div class="actpost"></div></a></td>
+							<td class="table-edit-post"><a href="/admin/brdcast/edit/<%= lbnoac[:id] %>"><div class="editpost"></div></a></td>
+							<td class="table-del-post"><a href="/admin/brdcast/del/<%= lbnoac[:id] %>"><div class="deletepost"></div></a></td>
+						</tr>
+						<% end %>
+					</table>
+					<a href="/admin/brdcast/setting/activation"><h4>اظهار الجميع</h4></a>
+				</div>
+				<hr/>
+				<div id="last-brd">
+					<h2 id="last-brd-title-act">اخر البرودكستات المفعلة</h2>
+					<table border=1px style="width:100%;" id="last-brd-table">
+						<tr>
+							<thead>
+							<th class="last-brd-brd">البرودكاست</th>
+							<th>القسم</th>
+							<th>اسم المضيف</th>
+							<th>رقم الهاتف</th>
+							<th class="table-edit-post">تعديل</th>
+							<th class="table-del-post">حذف</th>
+						</tr>
+						<% @last_brd.each do |lb| %>
+						<tr>
+							<td class="last-brd-brd"><%= lb[:details] %></td>
+							<td><%= lb[:category] %></td>
+							<td><%= lb[:user_name] %></td>
+							<td><%= lb[:user_phone] %></td>
+							<td class="table-edit-post"><a href="/admin/brdcast/edit/<%= lb[:id] %>"><div class="editpost"></div></a></td>
+							<td class="table-del-post"><a href="/admin/brdcast/del/<%= lb[:id] %>"><div class="deletepost"></div></a></td>
+						</tr>
+						<% end %>
+					</table>
+					<a href="/admin/brdcast/setting"><h4>اظهار الجميع</h4></a>
+				</div>
+				<hr/>
+				<div id="last-mes">
+					<h2 id="last-mes-title">اخر الرسائل</h2>
+					<table border=1px style="width:100%;" id="last-brd-table">
+						<tr>
+							<thead>
+							<th>الاسم</th>
+							<th>الهاتف</th>
+							<th>الايميل</th>
+							<th>الرسالة</th>
+							<th>حذف</th>
+						</tr>
+						<% @last_mes.each do |lm| %>
+						<tr>
+							<td><%= lm[:visitor_name] %></td>
+							<td><%= lm[:visitor_phone] %></td>
+							<td><%= lm[:visitor_email] %></td>
+							<td><%= lm[:visitor_message] %></td>
+							<td class="table-del-post"><a href="/admin/messages/del/<%= lm[:id] %>"><div class="deletepost" class="td-image"></div></a></td>
+						</tr>
+						<% end %>
+					</table>
+					<% if @not_messages %>
+						<h4>لا توجد رسائل</h4>
+					<% end %>
+					<a href="/admin/messages"><h4>اظهار الجميع</h4></a>
+				</div>
+			</div>
+			<footer>
+				<a href=""><h3>تصميم وبرمجة البوسطة</h3></a>
+			</footer>
+		</div>
+	</body>
+	<script> 
+	$(document).ready(function(){
+	  $("#navview").click(function(){
+	    $("#navbar").slideToggle("slow");
+	  });
+	});
+	</script>
+</html>
