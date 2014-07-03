@@ -139,11 +139,6 @@ get '/admin/brdcast/active/:id' do
 	redirect '/admin'
 end
 
-get '/admin/brdcast/unactive/:id' do
-	DB[:brodcasts].where(:id => params[:id]).update(:active => "لا")
-	redirect '/admin'
-end
-
 get '/admin/brdcast/del/:id' do
 	DB[:brodcasts].where(:id => params[:id]).delete
 	redirect '/admin'
@@ -214,11 +209,6 @@ end
 get '/admin/brdcast/setting/active/:id' do
 	DB[:brodcasts].where(:id => params[:id]).update(:active => "نعم")
 	redirect '/admin/brdcast/setting/activation'
-end
-
-get '/admin/brdcast/setting/unactive/:id' do
-	DB[:brodcasts].where(:id => params[:id]).update(:active => "لا")
-	redirect '/admin/brdcast/setting'
 end
 
 get '/admin/messages' do

@@ -69,7 +69,6 @@
 							<th>القسم</th>
 							<th>اسم المضيف</th>
 							<th>رقم الهاتف</th>
-							<th class="table-unactive-post">الغاء التفعيل</th>
 							<th class="table-edit-post">تعديل</th>
 							<th class="table-del-post">حذف</th>
 						</tr>
@@ -79,7 +78,6 @@
 							<td><%= lb[:category] %></td>
 							<td><%= lb[:user_name] %></td>
 							<td><%= lb[:user_phone] %></td>
-							<td class="table-unactive-post"><a href="/admin/brdcast/unactive/<%= lb[:id] %>"><div class="unactivepost"></div></a></td>
 							<td class="table-edit-post"><a href="/admin/brdcast/edit/<%= lb[:id] %>"><div class="editpost"></div></a></td>
 							<td class="table-del-post"><a href="/admin/brdcast/del/<%= lb[:id] %>"><div class="deletepost"></div></a></td>
 						</tr>
