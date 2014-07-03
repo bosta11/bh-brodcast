@@ -3,7 +3,7 @@ require 'sequel'
 enable :sessions
 DB = Sequel.connect (ENV['DATABASE_URL'] || "sqlite://brdcast.dib")
 Username="admin"
-Password="a.1.1998.M.e"
+Password="12345"
 
 set :public_folder, 'public'
 
